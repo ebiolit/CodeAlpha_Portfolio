@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ebiolit Chemeda | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    position:fixed;
+    width:100%;
+    backdrop-filter:blur(10px);
+    background:rgba(15,23,42,0.7);
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* SECTION */
+section{
+    padding:120px 10%;
+    min-height:100vh;
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* HERO */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.hero-text{
+    max-width:500px;
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero span{
+    color:#38bdf8;
+}
+
+.hero p{
+    margin:20px 0;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    margin-right:10px;
+    background:#38bdf8;
+    color:black;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:500;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    background:white;
+}
+
+/* PROFILE IMAGE */
+.profile-img{
+    width:300px;
+    border-radius:50%;
+    box-shadow:0 0 25px #38bdf8;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+/* SKILLS & PROJECTS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(56,189,248,0.2);
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#0f172a;
+}
+
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+    .profile-img{
+        margin-top:30px;
+        width:220px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Ebiolit</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Ebioit Chemeda</span></h1>
+        <h3>Frontend Developer | Computer Science Student</h3>
+        <p>Passionate about building modern, responsive web applications using HTML, CSS and JavaScript.</p>
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="resume.pdf" class="btn" download>Download CV</a>
+    </div>
+
+    
+    <img src="profile.jpg" alt="Ebiolit" class="profile-img">
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am a Computer Science student currently participating in the CodeAlpha Frontend Internship. I enjoy building interactive and responsive web interfaces.</p>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+    <div class="grid">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Git</div>
+        <div class="card">GitHub</div>
+        <div class="card">Responsive Design</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Calculator App</h3>
+            <p>Arithmetic calculator with error handling.</p>
+        </div>
+        <div class="card">
+            <h3>Image Gallery</h3>
+            <p>Responsive gallery with hover effects.</p>
+        </div>
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Modern animated portfolio design.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ebiolitchemeda@gmail.com">ebiolitchemeda@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/ebiolit" target="_blank">https://github.com/ebiolit</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ebiolit-chemeda-0658193b1/" target="_blank">https://www.linkedin.com/in/ebiolit-chemeda-0658193b1/</a></p>
+</section>
+
+<footer>
+    <p>© 2026 Ebiolit Chemeda | CodeAlpha Internship</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
